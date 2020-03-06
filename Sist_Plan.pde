@@ -1,6 +1,6 @@
-//import gifAnimation.*;
+import gifAnimation.*;
 
-//GifMaker ficherogif;
+GifMaker ficherogif;
 
 Planeta sol;
 Planeta mercurio;
@@ -42,8 +42,8 @@ void setup() {
   strokeWeight(0);
   noFill();
   
-  //ficherogif = new GifMaker( this, "sistema_planetario.gif");
-  //ficherogif.setRepeat(0);
+  ficherogif = new GifMaker( this, "sistema_solar.gif");
+  ficherogif.setRepeat(0);
   
   R = (height/2) * tan(PI/3);
   pos_absoluta = new Punto(width/2, height/2, R);
@@ -98,7 +98,6 @@ void actualizar_perspectiva(){
   pos_absoluta.setY(pos_absoluta.getY() + velocidad * abs(cos(rotacionY)) * sin(rotacionX));
   pos_absoluta.setZ(pos_absoluta.getZ() - velocidad * cos(rotacionY) * cos(rotacionX));
   
-  //println(pos_absoluta.getX() + ", " + pos_absoluta.getY() + ", " + pos_absoluta.getZ());
 }
 
 void imprime_leyenda(){
@@ -201,12 +200,12 @@ void draw() {
   dibujaNave();
   actualizar_perspectiva();
   
-  //if(cuenta_frames == 5){
-  //  ficherogif.addFrame();
-  //  cuenta_frames = 0;
-  //}
+  if(cuenta_frames == 3){
+    ficherogif.addFrame();
+    cuenta_frames = 0;
+  }
   
-  //cuenta_frames++;
+  cuenta_frames++;
 }
 
 void keyPressed(){
