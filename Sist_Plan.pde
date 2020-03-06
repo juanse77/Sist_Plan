@@ -92,10 +92,10 @@ void imprime_leyenda(){
   textFont(createFont("Arial", 22));
   textAlign(LEFT, TOP);
   
-  text("Para cambiar primera persona / vista panorámica pulse (c)", 28, 28);
-  text("Para controlar la nave usar teclas de dirección", 28, 56);
-  text("Para acelerar la nave pulse (a), para frenarla (f)", 28, 84);
-  text("Para pausar o reiniciar pulse tecla (espacio)", 28, 112);
+  text("Para cambiar primera persona / vista panorámica pulse (c)", 0, 0);
+  text("Para controlar la nave usar teclas de dirección", 0, 28);
+  text("Para acelerar la nave pulse (a), para frenarla (f)", 0, 56);
+  text("Para pausar o reiniciar pulse tecla (espacio)", 0, 84);
   
   textFont(createFont("Arial", 18));
   textAlign(CENTER, CENTER);
@@ -174,7 +174,7 @@ void draw() {
              -R * cos(rotacionY) * cos(rotacionX),
            0, 1, 0);
   }else{
-    camera(width/2, height/2, R, width/2, height/2, 0, 0, 1, 0);
+    camera(width/2, height/2, R+100, width/2, height/2, 0, 0, 1, 0);
   }
   
   dibujaSistemaSolar();
