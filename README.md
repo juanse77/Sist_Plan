@@ -1,6 +1,6 @@
 <h1>Sistema solar:</h1>
 
-<p>Este proyecto es una extensión del anterior, en el que se generó una simulación del sistema solar. La novedad introducida en este trabajo es la inclusión de una nave capaz de viajar a través del sistema. El objetivo que se buscaba con esto era la utilización de una cámara que se moviese junto con la nave y que proporcionase al usuario una visión en primera persona.</p>
+<p>Este proyecto es una extensión del anterior, en el que se generó una simulación del sistema solar. La novedad en este trabajo es la introducción de una nave capaz de viajar a través del sistema. El objetivo que se buscaba con esto era la utilización de una cámara que se moviese junto con la nave y que proporcionase al usuario una visión en primera persona.</p>
 
 <h2>Controles</h2>
 
@@ -14,7 +14,7 @@
 
 <p>Para los cálculos de la posición absoluta de la nave y de su trayectoria se ha utilizado la combinación de las matrices de rotación Y-X. La trayectoria es la suma acumulativa del resultado del producto del módulo de la velocidad por las componentes que a su vez son resultado de transformar el vector (0, 0, -1) mediante la combinación de las matrices de rotación.</p>
 
-<p>Para la correcta visualización de las etiquetas se ha utilizado un procedimiento distinto para cada modo de visualización. En el modo panorámico simplemente se deshace la rotación del eje X que se le haya aplicado. En el modo de visualización en primera persona, se ha calculado el producto escalar del vector (0, 0, 1), que es la dirección normal de la etiqueta, por el vector que une los puntos de la nave y cada planeta. Para el cálculo del ángulo final de la etiqueta se ha despreciado la componente Y del vector nave-planeta en el cálculo del módulo, ya que ángulo que se busca es el que forma la nave con el plano XZ que pasa por el planeta.</p> 
+<p>Para la correcta visualización de las etiquetas se ha utilizado un procedimiento distinto para cada modo de visualización. En el modo panorámico simplemente se deshace la rotación del eje X que se le haya aplicado. En el modo de visualización en primera persona, se ha calculado el producto escalar del vector (0, 0, 1), que es la dirección normal de la etiqueta, por el vector que une los puntos de la nave y cada planeta. Para el cálculo del ángulo final de la etiqueta se ha despreciado la componente Y del vector nave-planeta en el cálculo del módulo, ya que ángulo que se busca es el que forma el este vector con el plano XZ que pasa por el planeta.</p> 
 
 <div align="center">
 	<p><img src="./sistema_solar.gif" alt="Sistema solar interactivo 3D" /></p>
