@@ -18,6 +18,8 @@ Punto pos_absoluta;
 float rotacionX = 0;
 float rotacionY = 0;
 
+float angulo_panoramica;
+
 float velocidad = 0;
 
 boolean subir = false;
@@ -26,6 +28,9 @@ boolean girar_izquierda = false;
 boolean girar_derecha = false;
 boolean acelera = false;
 boolean frena = false;
+
+boolean subir_panoramica = false;
+boolean bajar_panoramica = false;
 
 boolean pausa = false;
 boolean modo_pantalla = true;
@@ -65,6 +70,14 @@ void actualizar_perspectiva(){
     rotacionX += PI/512;
   }
   
+  if(modo_pantalla && subir_panoramica && angulo_panoramica > -PI/2){
+    angulo_panoramica -= PI/1024;
+  }
+  
+  if(modo_pantalla && bajar_panoramica && angulo_panoramica < PI/2){
+    angulo_panoramica += PI/1024;
+  }
+  
   if(girar_derecha){
     rotacionY -= PI/256;
   }
@@ -89,16 +102,22 @@ void actualizar_perspectiva(){
 }
 
 void imprime_leyenda(){
+  pushMatrix();
+  
+  rotateX(-angulo_panoramica);
+  
   textFont(createFont("Arial", 22));
   textAlign(LEFT, TOP);
   
   text("Para cambiar primera persona / vista panorámica pulse (c)", 0, 0);
   text("Para controlar la nave usar teclas de dirección", 0, 28);
   text("Para acelerar la nave pulse (a), para frenarla (f)", 0, 56);
-  text("Para pausar o reiniciar pulse tecla (espacio)", 0, 84);
+  text("Para subir panorámica (u), bajar panorámica (d)", 0, 84);
+  text("Para pausar o reiniciar pulse tecla (espacio)", 0, 112);
   
   textFont(createFont("Arial", 18));
   textAlign(CENTER, CENTER);
+  popMatrix();
 }
 
 void dibujaSistemaSolar(){
@@ -113,19 +132,19 @@ void dibujaSistemaSolar(){
 
   actualizar_perspectiva();
 
-  sol.dibuja_planeta(0, null, pos_absoluta, modo_pantalla);
-  mercurio.dibuja_planeta(0, null, pos_absoluta, modo_pantalla);
-  venus.dibuja_planeta(0, null, pos_absoluta, modo_pantalla);
-  tierra.dibuja_planeta(0, null, pos_absoluta, modo_pantalla);
+  sol.dibuja_planeta(angulo_panoramica, null, pos_absoluta, modo_pantalla);
+  mercurio.dibuja_planeta(angulo_panoramica, null, pos_absoluta, modo_pantalla);
+  venus.dibuja_planeta(angulo_panoramica, null, pos_absoluta, modo_pantalla);
+  tierra.dibuja_planeta(angulo_panoramica, null, pos_absoluta, modo_pantalla);
   
   Punto pos_rel = tierra.getPosicionRelativa();
-  luna.dibuja_planeta(0, pos_rel, pos_absoluta, modo_pantalla);
+  luna.dibuja_planeta(angulo_panoramica, pos_rel, pos_absoluta, modo_pantalla);
   
-  marte.dibuja_planeta(0, null, pos_absoluta, modo_pantalla);
-  jupiter.dibuja_planeta(0, null, pos_absoluta, modo_pantalla);
+  marte.dibuja_planeta(angulo_panoramica, null, pos_absoluta, modo_pantalla);
+  jupiter.dibuja_planeta(angulo_panoramica, null, pos_absoluta, modo_pantalla);
   
   pos_rel = jupiter.getPosicionRelativa();
-  ganimedes.dibuja_planeta(0, pos_rel, pos_absoluta, modo_pantalla);
+  ganimedes.dibuja_planeta(angulo_panoramica, pos_rel, pos_absoluta, modo_pantalla);
   popMatrix();
 }
 
@@ -136,7 +155,7 @@ void dibujaNave(){
   fill(128, 128, 255);
   
   pushMatrix();
-  
+    
   translate(pos_absoluta.getX(), pos_absoluta.getY(), pos_absoluta.getZ());
   
   rotateY(rotacionY);
@@ -175,6 +194,7 @@ void draw() {
            0, 1, 0);
   }else{
     camera(width/2, height/2, R+100, width/2, height/2, 0, 0, 1, 0);
+    rotateX(angulo_panoramica);
   }
   
   dibujaSistemaSolar();
@@ -232,6 +252,14 @@ void keyPressed(){
     }
   }
   
+  if(key == 'u' || key == 'U'){
+    subir_panoramica = true;  
+  }
+  
+  if(key == 'd' || key == 'D'){
+    bajar_panoramica = true;  
+  }
+  
   //if(key == 'r'){
   //  ficherogif.finish();
   //}
@@ -260,5 +288,13 @@ void keyReleased(){
   
   if(key == 'f' || key == 'F'){
     frena = false;  
+  }
+  
+  if(key == 'u' || key == 'U'){
+    subir_panoramica = false;  
+  }
+  
+  if(key == 'd' || key == 'D'){
+    bajar_panoramica = false;  
   }
 }

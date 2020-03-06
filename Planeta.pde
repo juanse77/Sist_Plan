@@ -63,7 +63,6 @@ class Planeta{
     popMatrix();
     
     pushMatrix();
-    rotateX(-rotacionX);
     
     if(!modo_pantalla){
       // Se calcula el ángulo mediante el producto escalar
@@ -72,7 +71,7 @@ class Planeta{
       
       // Se ignora la coordenada Y
       float angulo = acos(vecCamaraPlaneta.getZ() /
-        (vecZ.getModulo(vecZ.getX(), 0, vecZ.getZ()) * 
+        (vecZ.getZ() * 
         vecCamaraPlaneta.getModulo(vecCamaraPlaneta.getX(), 0, vecCamaraPlaneta.getZ())));
       
       if(vecCamaraPlaneta.getX() <= 0){
@@ -80,6 +79,9 @@ class Planeta{
       }
   
       rotateY(angulo);
+
+    }else{
+      rotateX(-rotacionX);
     }
     
     text(this.nombre_planeta, 0, this.radio_planeta + 15);

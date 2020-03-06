@@ -1,10 +1,20 @@
 <h1>Sistema solar:</h1>
 
-<p>Este proyecto es una extensión del anterior, en el que se generó una simulación del sistema solar. La novedad introducida en este nuevo trabajo es la inclusión de una nave capaz de viajar a través del sistema. El objetivo que se buscaba con esto era la utilización de una cámara que se moviese junto con de la nave y que proporcionase al usuario una visión en primera persona.</p>
+<p>Este proyecto es una extensión del anterior, en el que se generó una simulación del sistema solar. La novedad introducida en este trabajo es la inclusión de una nave capaz de viajar a través del sistema. El objetivo que se buscaba con esto era la utilización de una cámara que se moviese junto con la nave y que proporcionase al usuario una visión en primera persona.</p>
 
-<p>El usuario puede hacer uso de las teclas de dirección para orientar la nave y de las teclas de aceleración (a) y frenado (f) de la nave. Así mismo, también puede utilizar la tecla (c) para cambiar de modo de visualización, pasando alternativamente de la visión panorámica a la visión en primera persona. Como en el anterior trabajo se ha mantenido la función de pausa la cual se activa con la tecla (espacio).</p>
+<h2>Controles</h2>
 
-<p>La aplicación se ha realizado en Processing y en ella se ha utilizado los métodos pushMatrix, popMatrix, rotate y translate, ya introducidos en la anterior práctica, y como novedad se ha hecho uso del método camera. Este nuevo método es el que posibilita cambiar la perspectiva del usuario y navegar por el sistema planetario.</p>
+<p>El usuario puede hacer uso de las teclas de dirección para orientar la nave y de las teclas de aceleración (a) y frenado (f) de la misma. También puede utilizar la tecla (c) para cambiar de modo de visualización, pasando alternativamente de la visión panorámica a la visión en primera persona.</p>
+
+<p>La visión panorámica se puede rotar hacia arriba (u) y hacia abajo (d), esta funcionalidad sólo permanece activa en el modo de visualización panorámico. Como en el anterior trabajo se ha mantenido la función de pausa la cual se activa con la tecla (espacio).</p>
+
+<h2>Detalles de implementación</h2>
+
+<p>La aplicación se ha realizado en Processing y en ella se ha utilizado los métodos pushMatrix, popMatrix, rotate y translate, ya introducidos en la anterior práctica, y como novedad se ha hecho uso del método camera. Este método es el que posibilita cambiar la perspectiva del usuario y navegar por el sistema planetario.</p>
+
+<p>Para los cálculos de la posición absoluta de la nave y de su trayectoria se ha utilizado la combinación de las matrices de rotación Y-X. La trayectoria es la suma acumulativa del resultado del producto del módulo de la velocidad por las componentes que a su vez son resultado de transformar el vector (0, 0, -1) mediante la combinación de las matrices de rotación.</p>
+
+<p>Para la correcta visualización de las etiquetas se ha utilizado un procedimiento distinto para cada modo de visualización. En el modo panorámico simplemente se deshace la rotación del eje X que se le haya aplicado. En el modo de visualización en primera persona, se ha calculado el producto escalar del vector (0, 0, 1), que es la dirección normal de la etiqueta, por el vector que une los puntos de la nave y cada planeta. Para el cálculo del ángulo final de la etiqueta se ha despreciado la componente Y del vector nave-planeta en el cálculo del módulo, ya que ángulo que se busca es el que forma la nave con el plano XZ que pasa por el planeta.</p> 
 
 <div align="center">
 	<p><img src="./sistema_solar.gif" alt="Sistema solar interactivo 3D" /></p>
