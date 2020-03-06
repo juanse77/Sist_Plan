@@ -1,6 +1,6 @@
-import gifAnimation.*;
+//import gifAnimation.*;
 
-GifMaker ficherogif;
+//GifMaker ficherogif;
 
 Planeta sol;
 Planeta mercurio;
@@ -37,8 +37,8 @@ void setup() {
   strokeWeight(0);
   noFill();
   
-  ficherogif = new GifMaker( this, "sistema_planetario.gif");
-  ficherogif.setRepeat(0);
+  //ficherogif = new GifMaker( this, "sistema_planetario.gif");
+  //ficherogif.setRepeat(0);
   
   R = (height/2) * tan(PI/3);
   pos_absoluta = new Punto(width/2, height/2, R);
@@ -181,12 +181,12 @@ void draw() {
   dibujaNave();
   actualizar_perspectiva();
   
-  if(cuenta_frames == 5){
-    ficherogif.addFrame();
-    cuenta_frames = 0;
-  }
+  //if(cuenta_frames == 5){
+  //  ficherogif.addFrame();
+  //  cuenta_frames = 0;
+  //}
   
-  cuenta_frames++;
+  //cuenta_frames++;
 }
 
 void keyPressed(){
@@ -232,9 +232,9 @@ void keyPressed(){
     }
   }
   
-  if(key == 'r'){
-    ficherogif.finish();
-  }
+  //if(key == 'r'){
+  //  ficherogif.finish();
+  //}
 }
 
 void keyReleased(){
