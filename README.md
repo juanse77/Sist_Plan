@@ -14,13 +14,15 @@
 
 <p>Para los cálculos de la posición absoluta de la nave y de su trayectoria se ha utilizado la combinación de las matrices de rotación Y-X. La trayectoria es la suma acumulativa del resultado del producto del módulo de la velocidad por las componentes que a su vez son resultado de transformar el vector (0, 0, -1) mediante la combinación de las matrices de rotación.</p>
 
-<p>Para la correcta visualización de las etiquetas se ha utilizado un procedimiento distinto para cada modo de visualización. En el modo panorámico simplemente se deshace la rotación del eje X que se le haya aplicado. En el modo de visualización en primera persona, se ha calculado el producto escalar del vector (0, 0, 1), que es la dirección normal de la etiqueta, por el vector que une los puntos de la nave y cada planeta. Para el cálculo del ángulo final de la etiqueta se ha despreciado la componente Y del vector nave-planeta en el cálculo del módulo, ya que ángulo que se busca es el que forma este vector con el plano XZ que pasa por el planeta.</p> 
+<p>Para la correcta visualización de las etiquetas se ha utilizado un procedimiento distinto para cada modo de visualización. En el modo panorámico simplemente se deshace la rotación del eje X que se le haya aplicado.</p>
+
+<p>En el modo de visualización en primera persona y para la correcta orientación de las etiquetas, se ha calculado el ángulo mediante el producto escalar del vector (0, 0, 1), que es la dirección normal de la etiqueta, por el vector que une los puntos de la nave y cada planeta, despejando el ángulo y aplicando el arcocoseno al producto vectorial dividido entre el producto de los módulos de los vectores. Para el cálculo del ángulo final de la etiqueta se ha despreciado la componente Y del vector nave-planeta en el cálculo del módulo, ya que ángulo que se busca es el que forma este vector con el plano XZ que pasa por el planeta.</p> 
 
 <div align="center">
 	<p><img src="./sistema_solar.gif" alt="Sistema solar interactivo 3D" /></p>
 </div>
 
-<p>Esta aplicación se ha desarrollado como cuarta práctica evaluable para la asignatura de "Creando Interfaces de Usuarios" de la mención de Computación del grado de Ingeniería Informática de la Universidad de Las Palmas de Gran Canaria en el curso 2019/20 y en fecha de 06/3/2020 por el alumno Juan Sebastián Ramírez Artiles.</p>
+<p>Esta aplicación se ha desarrollado como cuarta práctica evaluable para la asignatura de "Creando Interfaces de Usuarios" de la mención de Computación del grado de Ingeniería Informática de la Universidad de Las Palmas de Gran Canaria en el curso 2019/20 y en fecha de 08/3/2020 por el alumno Juan Sebastián Ramírez Artiles.</p>
 
 <p>Referencias a los recursos utilizados:</p>
 <ul>
