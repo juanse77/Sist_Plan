@@ -20,7 +20,7 @@
 
 <p>Para la correcta visualización de las etiquetas se ha utilizado un procedimiento distinto para cada modo de visualización. En el modo panorámico simplemente se deshace la rotación del eje X que se le haya aplicado.</p>
 
-<p>En el modo de visualización en primera persona y para la correcta orientación de las etiquetas, se ha calculado el ángulo mediante el producto escalar del vector (0, 0, 1), que es la dirección normal de la etiqueta, por el vector que une los puntos de la nave y cada planeta, despejando el ángulo y aplicando el arcocoseno al producto vectorial dividido entre el producto de los módulos de los vectores. Para el cálculo del ángulo final de la etiqueta se ha despreciado la componente Y del vector nave-planeta en el cálculo del módulo, ya que ángulo que se busca es el que forma este vector con el plano XZ que pasa por el planeta.</p> 
+<p>En el modo de visualización en primera persona y para la correcta orientación de las etiquetas, se ha calculado el ángulo mediante el producto escalar del vector (0, 0, 1), que es la dirección normal de la etiqueta, por el vector que une los puntos de la nave y cada planeta, despejando el ángulo y aplicando el arcocoseno al producto escalar dividido entre el producto de los módulos de los vectores. Para el cálculo del ángulo final de la etiqueta se ha despreciado la componente Y del vector nave-planeta en el cálculo del módulo, ya que ángulo que se busca es el que forma este vector con el plano XZ que pasa por el planeta.</p> 
 
 <div align="center">
 	<p><img src="./sistema_solar.gif" alt="Sistema solar interactivo 3D" /></p>
