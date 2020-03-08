@@ -12,7 +12,7 @@
 
 <p>La aplicación se ha realizado en Processing y en ella se ha utilizado los métodos pushMatrix, popMatrix, rotate y translate, ya introducidos en la anterior práctica, y como novedad se ha hecho uso del método camera. Este método es el que posibilita cambiar la perspectiva del usuario y navegar por el sistema planetario.</p>
 
-<p>En la generación de los planetas y satélites, se ha hecho uso de una clase que posee como atributos principales: el radio del planeta, el radio de la órbita, la velocidad de traslación, la velocidad de rotación y la posición inicial dentro de su orbita que se generará aleatóriamente.</p>
+<p>En la generación de los planetas y satélites se ha hecho uso de una clase que posee como atributos principales: el radio del planeta, el radio de la órbita, la velocidad de traslación, la velocidad de rotación y la posición inicial dentro de su orbita que se generará aleatóriamente.</p>
 
 <p>Para los cálculos de la posición absoluta de la nave y de su trayectoria se ha utilizado la combinación de las matrices de rotación Y-X. La trayectoria es la suma acumulativa del resultado del producto del módulo de la velocidad por las componentes que a su vez son resultado de transformar el vector (0, 0, -1) mediante la combinación de las matrices de rotación.</p>
 
