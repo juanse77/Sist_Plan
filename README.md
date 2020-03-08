@@ -1,4 +1,4 @@
-<h1>Sistema solar:</h1>
+<h1>Sistema solar con nave:</h1>
 
 <p>Este proyecto es una extensión del anterior, en el que se generó una simulación del sistema solar. La novedad en este trabajo es la introducción de una nave capaz de viajar a través del sistema. El objetivo que se buscaba con esto era la utilización de una cámara que se moviese junto con la nave y que proporcionase al usuario una visión en primera persona.</p>
 
