@@ -37,8 +37,8 @@ boolean modo_pantalla = true;
 
 int cuenta_frames = 0;
 
-void setup() { 
-  size(1600, 1000, P3D);
+void setup() {
+  fullScreen(P3D);
   strokeWeight(0);
   noFill();
   
@@ -112,7 +112,7 @@ void imprime_leyenda(){
   text("Para controlar la nave usar teclas de dirección", 0, 28);
   text("Para acelerar la nave pulse (a), para frenarla (f)", 0, 56);
   text("Para subir panorámica (u), bajar panorámica (d)", 0, 84);
-  text("Para pausar o reiniciar pulse tecla (espacio)", 0, 112);
+  text("Para pausar o reiniciar pulse tecla (espacio). Para salir (esc)", 0, 112);
   
   textFont(createFont("Arial", 18));
   textAlign(CENTER, CENTER);

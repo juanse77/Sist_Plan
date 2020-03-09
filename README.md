@@ -6,7 +6,7 @@
 
 <p>El usuario puede hacer uso de las teclas de dirección para orientar la nave y de las teclas de aceleración (a) y frenado (f) de la misma. También puede utilizar la tecla (c) para cambiar de modo de visualización, pasando alternativamente de la visión panorámica a la visión en primera persona.</p>
 
-<p>La visión panorámica se puede rotar hacia arriba (u) y hacia abajo (d), esta funcionalidad sólo permanece activa en el modo de visualización panorámico. Como en el anterior trabajo se ha mantenido la función de pausa la cual se activa con la tecla (espacio).</p>
+<p>La visión panorámica se puede rotar hacia arriba (u) y hacia abajo (d), esta funcionalidad sólo permanece activa en el modo de visualización panorámico. Como en el anterior trabajo se ha mantenido la función de pausa la cual se activa con la tecla (espacio). Para salir pulse (escape).</p>
 
 <h2>Detalles de implementación</h2>
 
@@ -26,7 +26,7 @@
 	<p><img src="./sistema_solar.gif" alt="Sistema solar interactivo 3D" /></p>
 </div>
 
-<p>Esta aplicación se ha desarrollado como cuarta práctica evaluable para la asignatura de "Creando Interfaces de Usuarios" de la mención de Computación del grado de Ingeniería Informática de la Universidad de Las Palmas de Gran Canaria en el curso 2019/20 y en fecha de 08/3/2020 por el alumno Juan Sebastián Ramírez Artiles.</p>
+<p>Esta aplicación se ha desarrollado como cuarta práctica evaluable para la asignatura de "Creando Interfaces de Usuarios" de la mención de Computación del grado de Ingeniería Informática de la Universidad de Las Palmas de Gran Canaria en el curso 2019/20 y en fecha de 9/3/2020 por el alumno Juan Sebastián Ramírez Artiles.</p>
 
 <p>Referencias a los recursos utilizados:</p>
 <ul>
