@@ -1,3 +1,7 @@
+<html>
+<head>
+</head>
+<body>
 <h1>Sistema solar con nave:</h1>
 
 <p>Este proyecto es una extensión del anterior, en el que se generó una simulación del sistema solar. La novedad en este trabajo es la introducción de una nave capaz de viajar a través del sistema. El objetivo que se buscaba con esto era la utilización de una cámara que se moviese junto con la nave y que proporcionase al usuario una visión en primera persona.</p>
@@ -39,3 +43,4 @@
 	<li>Textura Júpiter: "https://josevicentediaz.com/2015/11/26/jupiter-en-4k-ultra-hd/"</li>
 	<li>Textura Ganímedes: "https://pijamasurf.com/2015/03/un-viaje-a-traves-de-las-texturas-de-los-planetas-y-lunas-del-sistema-solar-fotos/"</li>
 </ul>
+</body>
